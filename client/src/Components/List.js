@@ -1,11 +1,11 @@
 import React from 'react';
-import X from "./X"
+import Crd from "./Card"
 
-function List() {
-  const table = [1, 2, 3]
+function List({ books }) {
+
   return (
-    <div style={{ display: "flex",justifyContent:"space-around" }}>
-      {table.map((elt, index) => (<X key={index} />))}
+    <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", flexWrap: "wrap", width: "70%", margin: "auto" }}>
+      {books.map((elt, index) => (<Crd key={elt.id} book={elt} />))}
     </div>
   )
 }

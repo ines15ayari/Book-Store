@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from "react-router-dom"
 
-function BookDetails() {
+function BookDetails({ books }) {
+  const { id } = useParams();
+  console.log(id)
+  const foundBook = books.find((elt) => elt._id == id)
+  console.log(foundBook)
   return (
-    <div>bookDetails</div>
+    <div>{
+      foundBook.Description
+
+    }</div>
   )
 }
 
